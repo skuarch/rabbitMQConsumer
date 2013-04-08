@@ -31,7 +31,7 @@ public class RabbitMQConsumer {
         String routingKey = "testRoute";
         boolean durable = true;
         channel.exchangeDeclare(exchangeName, "direct", durable);
-        channel.queueDeclare(queueName, durable, false, false, null);
+        channel.queueDeclare(queueName, durable, false, false, null);        
         channel.queueBind(queueName, exchangeName, routingKey);
         boolean noAck = false;
         QueueingConsumer consumer = new QueueingConsumer(channel);
